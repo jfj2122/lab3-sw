@@ -39,6 +39,8 @@
 #define BG_RED(x) (x)
 #define BG_GREEN(x) ((x)+1)
 #define BG_BLUE(x) ((x)+2)
+#define BG_COL(x) ((x)+3)
+#define BG_ROW(x) ((x)+4)
 
 /*
  * Information about our device
@@ -58,6 +60,8 @@ static void write_background(vga_ball_color_t *background)
 	iowrite8(background->red, BG_RED(dev.virtbase) );
 	iowrite8(background->green, BG_GREEN(dev.virtbase) );
 	iowrite8(background->blue, BG_BLUE(dev.virtbase) );
+	iowrite8(background->col, BG_COL(dev.virtbase) );
+	iowrite8(backgorund->row, BG_ROW(dev.virtbase) );
 	dev.background = *background;
 }
 

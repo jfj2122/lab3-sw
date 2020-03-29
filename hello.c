@@ -69,19 +69,19 @@ int main()
   unsigned char row, col;
   static const char filename[] = "/dev/vga_ball";
 
-  static const vga_ball_color_t colors[] = {
+  static const vga_ball_color_t colors;/*[] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00}
-  };
+    };*/
   
   char next_color[9][3] = {
-    { 0xff, 0x00, 0x00 }//, 0x2f, 0x0f }, /* Red */
-    { 0x00, 0xff, 0x00 }//, 0x3f, 0x1f }, /* Green */
-    { 0x00, 0x00, 0xff }//, 0x4f, 0x2f }, /* Blue */
-    { 0xff, 0xff, 0x00 }//, 0x5f, 0x3f }, /* Yellow */
-    { 0x00, 0xff, 0xff }//, 0x6f, 0x4f }, /* Cyan */
-    { 0xff, 0x00, 0xff }//, 0x7f, 0x5f }, /* Magenta */
-    { 0x80, 0x80, 0x80 }//, 0x8f, 0x6f }, /* Gray */
-    { 0x00, 0x00, 0x00 }//, 0x9f, 0x7f }, /* Black */
+    { 0xff, 0x00, 0x00 },//, 0x2f, 0x0f }, /* Red */
+    { 0x00, 0xff, 0x00 },//, 0x3f, 0x1f }, /* Green */
+    { 0x00, 0x00, 0xff },//, 0x4f, 0x2f }, /* Blue */
+    { 0xff, 0xff, 0x00 },//, 0x5f, 0x3f }, /* Yellow */
+    { 0x00, 0xff, 0xff },//, 0x6f, 0x4f }, /* Cyan */
+    { 0xff, 0x00, 0xff },//, 0x7f, 0x5f }, /* Magenta */
+    { 0x80, 0x80, 0x80 },//, 0x8f, 0x6f }, /* Gray */
+    { 0x00, 0x00, 0x00 },//, 0x9f, 0x7f }, /* Black */
     { 0xff, 0xff, 0xff }//, 0xaf, 0x8f }  /* White */
   };
   
@@ -106,11 +106,16 @@ int main()
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
     //colors[i % COLORS][4] = row;
-    &colors[0] = {next_color[i % COLORS][0],
-		 next_color[i % COLORS][1],
-		 next_color[i % COLORS][2],
-		 col,
-		 row};
+    /*&colors[0] = { next_color[i % COLORS][0],
+		   next_color[i % COLORS][1],
+		   next_color[i % COLORS][2],
+		   col,
+		   row };*/
+    colors.red = next_color[i % COLORS][0];
+    colors.green = next_color[i % COLORS][1];
+    colors.blue = next_color[i % COLORS][2];
+    colors.col = col;
+    colors.row = row;
     set_background_color(&colors[0]);
     print_background_color();
     if (row == 0 || row == 360) {

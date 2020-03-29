@@ -73,7 +73,7 @@ int main()
     { 0x00, 0x00, 0x00, 0x00, 0x00}
   };
   
-  char[] next_color[] = {
+  char next_color[9][3] = {
     { 0xff, 0x00, 0x00 }//, 0x2f, 0x0f }, /* Red */
     { 0x00, 0xff, 0x00 }//, 0x3f, 0x1f }, /* Green */
     { 0x00, 0x00, 0xff }//, 0x4f, 0x2f }, /* Blue */
@@ -106,12 +106,12 @@ int main()
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
     //colors[i % COLORS][4] = row;
-    colors[0] = {next_color[i % COLORS][0],
-	      next_color[i % COLORS][1],
-	      next_color[i % COLORS][2],
-	      col,
-	      row};
-    set_background_color(&colors[i]);
+    &colors[0] = {next_color[i % COLORS][0],
+		 next_color[i % COLORS][1],
+		 next_color[i % COLORS][2],
+		 col,
+		 row};
+    set_background_color(&colors[0]);
     print_background_color();
     if (row == 0 || row == 360) {
       if (n_s == 0) n_s = 1;

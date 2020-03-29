@@ -18,21 +18,21 @@
 int vga_ball_fd;
 
 // Set the next coordinate position
-// 0 is down, 1 is up
+// 0 is left, 1 is right
 unsigned char set_next_col(unsigned char col, int dir) {
   char col_next;
-  if (dir == 0) col_next = col - 0x01;
-  else col_next = col + 0x01;
+  if (dir == 0) col_next = col + 0x01;
+  else col_next = col - 0x01;
 
   return col_next;
 }
 
 // set next coordinate position
-// 0 is right, 1 is left
+// 0 is down, 1 is right
 unsigned char set_next_row(unsigned char row, int dir) {
   char row_next;
-  if (dir == 0)row_next = row + 0x01;
-  else row_next = row - 0x01;
+  if (dir == 0)row_next = row - 0x01;
+  else row_next = row + 0x01;
 
   return row_next;
 }

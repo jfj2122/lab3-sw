@@ -69,7 +69,7 @@ int main()
   unsigned char row, col;
   static const char filename[] = "/dev/vga_ball";
 
-  static const vga_ball_color_t colors;/*[] = {
+  vga_ball_color_t colors;/*[] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00}
     };*/
   

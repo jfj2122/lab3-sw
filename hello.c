@@ -24,12 +24,12 @@ unsigned char set_next_col(unsigned char col, int dir) {
   if (dir == 0) col_next = col - 0x01;
   else col_next = col + 0x01;
 
-  return col_next
+  return col_next;
 }
 
 // set next coordinate position
 // 0 is right, 1 is left
-unsigned char set_next_row(unsigned char row, int dir){
+unsigned char set_next_row(unsigned char row, int dir) {
   char row_next;
   if (dir == 0)row_next = row + 0x01;
   else row_next = row - 0x01;
@@ -69,8 +69,8 @@ int main()
   unsigned char row, col;
   static const char filename[] = "/dev/vga_ball";
 
-  static const vga_ball_color_t colors;
-  char next_color[][] = {
+  static const vga_ball_color_t colors[];
+  char[] next_color[] = {
     { 0xff, 0x00, 0x00 }//, 0x2f, 0x0f }, /* Red */
     { 0x00, 0xff, 0x00 }//, 0x3f, 0x1f }, /* Green */
     { 0x00, 0x00, 0xff }//, 0x4f, 0x2f }, /* Blue */
@@ -103,12 +103,12 @@ int main()
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
     //colors[i % COLORS][4] = row;
-    colors = {next_color[i % COLORS][0],
+    colors = {{next_color[i % COLORS][0],
 	      next_color[i % COLORS][1],
 	      next_color[i % COLORS][2],
 	      col,
-	      row }
-    set_background_color(&colors);
+	      row }};
+    set_background_color(&colors[i]);
     print_background_color();
     if (row == 0 || row == 360) {
       if (n_s == 0) n_s = 1;

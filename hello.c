@@ -98,7 +98,7 @@ int main()
   print_background_color();
   
   col = 0x2f;
-  row = 0x2f;
+  row = 0;
   e_w = 1;
   n_s = 0;
   for (i = 0 ; i < 600 ; i++) {
@@ -118,15 +118,15 @@ int main()
     colors.row = row;
     set_background_color(&colors);
     print_background_color();
-    if (row == 0 || row == 360) {
+    if (row == 0 || row == 200) {
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }
-    if (col == 0 || col == 360) {
+    if (col == 0x2f || col == 400) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
     }
-    usleep(40000);
+    usleep(10000);
   }
   
   printf("VGA BALL Userspace program terminating\n");

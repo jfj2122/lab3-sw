@@ -97,8 +97,8 @@ int main()
   printf("initial state: ");
   print_background_color();
   
-  col = 0x2f;
-  row = 0;
+  col = 0x00;
+  row = 0x00;
   e_w = 1;
   n_s = 0;
   for (i = 0 ; i < 600 ; i++) {
@@ -122,7 +122,7 @@ int main()
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }
-    if (col == 0x2f || col == 400) {
+    if (col == 0x2f || col == 255) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
     }

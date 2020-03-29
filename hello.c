@@ -101,7 +101,7 @@ int main()
   row = 0x2f;
   e_w = 1;
   n_s = 0;
-  for (i = 0 ; i < 300 ; i++) {
+  for (i = 0 ; i < 600 ; i++) {
     row = set_next_row(row, n_s);
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
@@ -111,9 +111,9 @@ int main()
 		   next_color[i % COLORS][2],
 		   col,
 		   row };*/
-    colors.red = next_color[i % COLORS][0];
-    colors.green = next_color[i % COLORS][1];
-    colors.blue = next_color[i % COLORS][2];
+    colors.red = 0x00;//next_color[i % COLORS][0];
+    colors.green = 0x00;//next_color[i % COLORS][1];
+    colors.blue = 0x00;//next_color[i % COLORS][2];
     colors.col = col;
     colors.row = row;
     set_background_color(&colors);
@@ -126,7 +126,7 @@ int main()
       if (e_w == 0) e_w = 1;
       else e_w = 0;
     }
-    usleep(400000);
+    usleep(40000);
   }
   
   printf("VGA BALL Userspace program terminating\n");

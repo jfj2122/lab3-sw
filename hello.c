@@ -116,7 +116,7 @@ int main()
     colors.blue = next_color[i % COLORS][2];
     colors.col = col;
     colors.row = row;
-    set_background_color(&colors[0]);
+    set_background_color(&colors);
     print_background_color();
     if (row == 0 || row == 360) {
       if (n_s == 0) n_s = 1;

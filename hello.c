@@ -69,7 +69,10 @@ int main()
   unsigned char row, col;
   static const char filename[] = "/dev/vga_ball";
 
-  static const vga_ball_color_t colors[];
+  static const vga_ball_color_t colors[] = {
+    { 0x00, 0x00, 0x00, 0x00, 0x00}
+  };
+  
   char[] next_color[] = {
     { 0xff, 0x00, 0x00 }//, 0x2f, 0x0f }, /* Red */
     { 0x00, 0xff, 0x00 }//, 0x3f, 0x1f }, /* Green */
@@ -81,7 +84,7 @@ int main()
     { 0x00, 0x00, 0x00 }//, 0x9f, 0x7f }, /* Black */
     { 0xff, 0xff, 0xff }//, 0xaf, 0x8f }  /* White */
   };
-
+  
 # define COLORS 9
 
   printf("VGA ball Userspace program started\n");
@@ -103,11 +106,11 @@ int main()
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
     //colors[i % COLORS][4] = row;
-    colors = {{next_color[i % COLORS][0],
+    colors[0] = {next_color[i % COLORS][0],
 	      next_color[i % COLORS][1],
 	      next_color[i % COLORS][2],
 	      col,
-	      row }};
+	      row};
     set_background_color(&colors[i]);
     print_background_color();
     if (row == 0 || row == 360) {

@@ -65,7 +65,7 @@ static void write_background(vga_ball_color_t *background)
 	iowrite8(background->col1, BG_COL1(dev.virtbase) );
 	iowrite8(background->col2, BG_COL2(dev.virtbase) );
 	iowrite8(background->row1, BG_ROW1(dev.virtbase) );
-	iowrite8(backgorund->row2, BG_ROW2(dev.virtbase) );
+	iowrite8(background->row2, BG_ROW2(dev.virtbase) );
 	dev.background = *background;
 }
 

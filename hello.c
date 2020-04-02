@@ -19,7 +19,7 @@ int vga_ball_fd;
 
 // Set the next coordinate position
 // 0 is left, 1 is right
-unsigned char set_next_col(uint_16 col, int dir) {
+unsigned char set_next_col(uint16_t col, int dir) {
   char col_next;
   if (dir == 0) col_next = col + 1;
   else col_next = col - 1;
@@ -29,7 +29,7 @@ unsigned char set_next_col(uint_16 col, int dir) {
 
 // set next coordinate position
 // 0 is down, 1 is right
-unsigned char set_next_row(uint_16 row, int dir) {
+unsigned char set_next_row(uint16_t row, int dir) {
   char row_next;
   if (dir == 0)row_next = row - 1;
   else row_next = row + 1;
@@ -48,7 +48,7 @@ void print_background_color() {
   printf("%02x %02x %02x %02x %02x %02x %02x\n",
 	 vla.background.red, vla.background.green, vla.background.blue,
 	 vla.background.col1, vla.background.col2,
-	 vla.background.row1, vla.backgorund.row1
+	 vla.background.row1, vla.background.row2
 	 );
 }
 
@@ -67,7 +67,7 @@ int main()
 {
   vga_ball_arg_t vla;
   int i, n_s, e_w;
-  uint_16 row, col;
+  uint16_t row, col;
   //unsigned char row1, row2, col1, col2;
   static const char filename[] = "/dev/vga_ball";
 

@@ -121,7 +121,7 @@ static int __init vga_ball_probe(struct platform_device *pdev)
 {
         vga_ball_color_t beige = { 0xf9, 0xe4, 0xb7 };
 	int ret;
-
+	pr_info("step a\n");
 	/* Register ourselves as a misc device: creates /dev/vga_ball */
 	ret = misc_register(&vga_ball_misc_device);
 
@@ -131,21 +131,21 @@ static int __init vga_ball_probe(struct platform_device *pdev)
 		ret = -ENOENT;
 		goto out_deregister;
 	}
-
+	pr_info("steb b\n");
 	/* Make sure we can use these registers */
 	if (request_mem_region(dev.res.start, resource_size(&dev.res),
 			       DRIVER_NAME) == NULL) {
 		ret = -EBUSY;
 		goto out_deregister;
 	}
-
+	pr_info("step c\n");
 	/* Arrange access to our registers */
 	dev.virtbase = of_iomap(pdev->dev.of_node, 0);
 	if (dev.virtbase == NULL) {
 		ret = -ENOMEM;
 		goto out_release_mem_region;
 	}
-        
+        pr_info("step d\n");
 	/* Set an initial color */
         write_background(&beige);
 

@@ -19,20 +19,20 @@ int vga_ball_fd;
 
 // Set the next coordinate position
 // 0 is left, 1 is right
-unsigned char set_next_col(unsigned char col, int dir) {
+unsigned char set_next_col(uint_16 col, int dir) {
   char col_next;
-  if (dir == 0) col_next = col + 0x01;
-  else col_next = col - 0x01;
+  if (dir == 0) col_next = col + 1;
+  else col_next = col - 1;
 
   return col_next;
 }
 
 // set next coordinate position
 // 0 is down, 1 is right
-unsigned char set_next_row(unsigned char row, int dir) {
+unsigned char set_next_row(uint_16 row, int dir) {
   char row_next;
-  if (dir == 0)row_next = row - 0x01;
-  else row_next = row + 0x01;
+  if (dir == 0)row_next = row - 1;
+  else row_next = row + 1;
 
   return row_next;
 }
@@ -45,9 +45,10 @@ void print_background_color() {
       perror("ioctl(VGA_BALL_READ_BACKGROUND) failed");
       return;
   }
-  printf("%02x %02x %02x %02x %02x\n",
+  printf("%02x %02x %02x %02x %02x %02x %02x\n",
 	 vla.background.red, vla.background.green, vla.background.blue,
-	 vla.background.col, vla.background.row
+	 vla.background.col1, vla.background.col2,
+	 vla.background.row1, vla.backgorund.row1
 	 );
 }
 
@@ -66,7 +67,8 @@ int main()
 {
   vga_ball_arg_t vla;
   int i, n_s, e_w;
-  unsigned char row, col;
+  uint_16 row, col;
+  //unsigned char row1, row2, col1, col2;
   static const char filename[] = "/dev/vga_ball";
 
   vga_ball_color_t colors;/*[] = {
@@ -96,9 +98,12 @@ int main()
 
   printf("initial state: ");
   print_background_color();
+
+  row = 0;
+  col = 0;
+  //col1 = 0x00;
+  //row1 = 0x00;
   
-  col = 0x00;
-  row = 0x00;
   e_w = 1;
   n_s = 0;
   for (i = 0 ; i < 600 ; i++) {
@@ -114,8 +119,10 @@ int main()
     colors.red = 0x00;//next_color[i % COLORS][0];
     colors.green = 0x00;//next_color[i % COLORS][1];
     colors.blue = 0x00;//next_color[i % COLORS][2];
-    colors.col = col;
-    colors.row = row;
+    colors.col1 = (col >> 8) & 0xff;
+    colors.col2 = col & 0xff;
+    colors.row1 = (row >> 8) & 0xff;
+    colors.row2 = row & 0xff;
     set_background_color(&colors);
     print_background_color();
     if (row == 0 || row == 200) {

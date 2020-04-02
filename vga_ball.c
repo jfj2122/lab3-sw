@@ -190,6 +190,7 @@ static struct platform_driver vga_ball_driver = {
 static int __init vga_ball_init(void)
 {
 	pr_info(DRIVER_NAME ": init\n");
+	pr_info("%d\n", platform_driver_probe(&vga_ball_driver, vga_ball_probe));
 	return platform_driver_probe(&vga_ball_driver, vga_ball_probe);
 }
 

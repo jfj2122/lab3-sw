@@ -100,8 +100,8 @@ int main()
   printf("initial state: ");
   print_background_color();
 
-  row = 200;
-  col = 200;
+  row = 480;
+  col = 640;
   //col1 = 0x00;
   //row1 = 0x00;
   
@@ -109,7 +109,7 @@ int main()
   n_s = 0;
   for (i = 0 ; i < 2000 ; i++) {
     //row = set_next_row(row, n_s);
-    col = set_next_col(col, e_w);
+    //col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
     //colors[i % COLORS][4] = row;
     /*&colors[0] = { next_color[i % COLORS][0],

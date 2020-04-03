@@ -101,7 +101,7 @@ int main()
   print_background_color();
 
   row = 500;
-  col = 500;
+  col = 200;
   //col1 = 0x00;
   //row1 = 0x00;
   

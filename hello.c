@@ -107,7 +107,7 @@ int main()
   
   e_w = 1;
   n_s = 0;
-  for (i = 0 ; i < 600 ; i++) {
+  for (i = 0 ; i < 2000 ; i++) {
     row = set_next_row(row, n_s);
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;

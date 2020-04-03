@@ -127,15 +127,42 @@ int main()
     set_background_color(&colors);
     print_background_color();
     printf("Cycle %d \n", i);
-    if (row == 0 || row == 10000) {
+    /*if (row == 0 || row == 10000) {
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }
     if (col == 0 || col == 9000) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
-      }
-    usleep(20000);
+      }*/
+    usleep(50000);
+    row = 0;
+    col = 0;
+    colors.col1 = (col >> 8) & 0xff;
+    colors.col2 = col & 0xff;
+    colors.row1 = (row >> 8) & 0xff;
+    colors.row2 = row & 0xff;
+    set_background_color(&colors);
+    print_background_color();
+    usleep(50000);
+    row = 460;
+    col = 620;
+    colors.col1 = (col >> 8) & 0xff;
+    colors.col2 = col & 0xff;
+    colors.row1 = (row >> 8) & 0xff;
+    colors.row2 = row & 0xff;
+    set_background_color(&colors);
+    print_background_color();
+    usleep(5000);
+    row = 20;
+    col = 20;
+    colors.col1 = (col >> 8) & 0xff;
+    colors.col2 = col & 0xff;
+    colors.row1 = (row >> 8) & 0xff;
+    colors.row2 = row & 0xff;
+    set_background_color(&colors);
+    print_background_color();
+    
   }
   
   printf("VGA BALL Userspace program terminating\n");

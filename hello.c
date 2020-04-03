@@ -135,7 +135,7 @@ int main()
       if (e_w == 0) e_w = 1;
       else e_w = 0;
       }*/
-    usleep(50000);
+    usleep(1000000);
     row = 0;
     col = 0;
     colors.col1 = (col >> 8) & 0xff;
@@ -144,7 +144,7 @@ int main()
     colors.row2 = row & 0xff;
     set_background_color(&colors);
     print_background_color();
-    usleep(50000);
+    usleep(1000000);
     row = 460;
     col = 620;
     colors.col1 = (col >> 8) & 0xff;
@@ -153,7 +153,7 @@ int main()
     colors.row2 = row & 0xff;
     set_background_color(&colors);
     print_background_color();
-    usleep(5000);
+    usleep(100000);
     row = 20;
     col = 20;
     colors.col1 = (col >> 8) & 0xff;
@@ -162,7 +162,7 @@ int main()
     colors.row2 = row & 0xff;
     set_background_color(&colors);
     print_background_color();
-    
+    return 0;
   }
   
   printf("VGA BALL Userspace program terminating\n");

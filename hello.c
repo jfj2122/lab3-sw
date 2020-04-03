@@ -127,7 +127,7 @@ int main()
     set_background_color(&colors);
     print_background_color();
     printf("Cycle %d \n", i);
-    if (row == 0 || row == 1000) {
+    if (row == 0 || row == 10000) {
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }

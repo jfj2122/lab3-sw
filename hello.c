@@ -126,11 +126,11 @@ int main()
     colors.row2 = row & 0xff;
     set_background_color(&colors);
     print_background_color();
-    if (row == 0 || row == 640) {
+    if (row == 0 || row == 1000) {
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }
-    if (col == 0 || col == 480) {
+    if (col == 0 || col == 900) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
     }

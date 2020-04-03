@@ -108,7 +108,7 @@ int main()
   e_w = 1;
   n_s = 0;
   for (i = 0 ; i < 2000 ; i++) {
-    row = set_next_row(row, n_s);
+    //row = set_next_row(row, n_s);
     col = set_next_col(col, e_w);
     //colors[i % COLORS][3] = col;
     //colors[i % COLORS][4] = row;
@@ -135,7 +135,7 @@ int main()
       if (e_w == 0) e_w = 1;
       else e_w = 0;
       }
-    usleep(40000);
+    usleep(20000);
   }
   
   printf("VGA BALL Userspace program terminating\n");

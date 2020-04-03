@@ -100,8 +100,8 @@ int main()
   printf("initial state: ");
   print_background_color();
 
-  row = 200;
-  col = 200;
+  row = 500;
+  col = 500;
   //col1 = 0x00;
   //row1 = 0x00;
   
@@ -127,15 +127,15 @@ int main()
     set_background_color(&colors);
     print_background_color();
     printf("Cycle %d \n", i);
-    /*if (row == 0 || row == 1000) {
+    if (row == 0 || row == 1000) {
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }
     if (col == 0 || col == 900) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
-      }*/
-    usleep(10000);
+      }
+    usleep(40000);
   }
   
   printf("VGA BALL Userspace program terminating\n");

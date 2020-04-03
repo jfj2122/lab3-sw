@@ -1,0 +1,208 @@
+[    1.163259] altera_hps2fpga_bridge: probe of sopc@0:fpgabridge@1 failed with error -2
+[    1.171096] altera_hps2fpga_bridge sopc@0:fpgabridge@2: Could not get fpga2hps reset control
+[    1.179516] altera_hps2fpga_bridge: probe of sopc@0:fpgabridge@2 failed with error -2
+[    1.187657] oprofile: using arm/armv7-ca9
+[    1.192397] NET: Registered protocol family 10
+[    1.199419] Segment Routing with IPv6
+[    1.203165] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.209629] NET: Registered protocol family 17
+[    1.214069] NET: Registered protocol family 15
+[    1.218523] can: controller area network core (rev 20170425 abi 9)
+[    1.224723] NET: Registered protocol family 29
+[    1.229167] can: raw protocol (rev 20170425)
+[    1.233420] can: broadcast manager protocol (rev 20170425 t)
+[    1.239071] can: netlink gateway (rev 20170425) max_hops=1
+[    1.244688] 8021q: 802.1Q VLAN Support v1.8
+[    1.248907] Key type dns_resolver registered
+[    1.253229] ThumbEE CPU extension supported.
+[    1.257503] Registering SWP/SWPB emulation handler
+[    1.266272] hctosys: unable to open rtc device (rtc0)
+[    1.271333] of_cfs_init
+[    1.273831] of_cfs_init: OK
+[    1.277459] ttyS0 - failed to request DMA
+[    1.281647] Waiting for root device /dev/mmcblk0p2...
+[    1.348810] mmc_host mmc0: Bus speed (slot 0) = 200000000Hz (slot req 25000000Hz, actual 25000000HZ div = 4)
+[    1.358624] mmc0: new SDHC card at address 1234
+[    1.363959] mmcblk0: mmc0:1234 SA16G 14.5 GiB 
+[    1.375142]  mmcblk0: p1 p2 p3
+[    1.525392] usb 1-1: new high-speed USB device number 2 using dwc2
+[    1.776214] hub 1-1:1.0: USB hub found
+[    1.780068] hub 1-1:1.0: 2 ports detected
+[    2.008790] random: fast init done
+[    2.095392] usb 1-1.2: new low-speed USB device number 3 using dwc2
+[    2.236053] input: HID 0b38:0010 as /devices/platform/sopc@0/ffb40000.usb/usb1/1-1/1-1.2/1-1.2:1.0/0003:0B38:0010.0001/input/input0
+[    2.316145] hid-generic 0003:0B38:0010.0001: input: USB HID v1.10 Keyboard [HID 0b38:0010] on usb-ffb40000.usb-1.2/input0
+[    2.332034] input: HID 0b38:0010 System Control as /devices/platform/sopc@0/ffb40000.usb/usb1/1-1/1-1.2/1-1.2:1.1/0003:0B38:0010.0002/input/input1
+[    2.405782] input: HID 0b38:0010 Consumer Control as /devices/platform/sopc@0/ffb40000.usb/usb1/1-1/1-1.2/1-1.2:1.1/0003:0B38:0010.0002/input/input2
+[    2.419494] hid-generic 0003:0B38:0010.0002: input: USB HID v1.10 Device [HID 0b38:0010] on usb-ffb40000.usb-1.2/input1
+[    3.303953] random: crng init done
+[    5.033513] EXT4-fs (mmcblk0p2): recovery complete
+[    6.051337] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    6.059478] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[    6.231434] devtmpfs: mounted
+[    6.236944] Freeing unused kernel memory: 1024K
+[    6.241677] Run /sbin/init as init process
+[   11.620141] systemd[1]: System time before build time, advancing clock.
+[   11.962246] systemd[1]: systemd 229 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ -LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN)
+[   11.980657] systemd[1]: Detected architecture arm.
+[   12.559124] systemd[1]: Set hostname to <de1-soc>.
+[   15.850940] systemd[1]: Listening on udev Kernel Socket.
+[   16.029488] systemd[1]: Reached target Encrypted Volumes.
+[   16.065701] systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.
+[   16.095657] systemd[1]: Listening on Journal Socket (/dev/log).
+[   16.125746] systemd[1]: Created slice System Slice.
+[   16.155731] systemd[1]: Created slice system-getty.slice.
+[   16.185544] systemd[1]: Reached target Swap.
+[   17.013598] systemd[1]: Listening on udev Control Socket.
+[   17.045552] systemd[1]: Reached target Paths.
+[   17.077677] systemd[1]: Mounted Debug File System.
+[   17.106529] systemd[1]: Started Remount Root and Kernel File Systems.
+[   17.140088] systemd[1]: Started Load Kernel Modules.
+[   17.179046] systemd[1]: Starting Apply Kernel Variables...
+[   17.217623] systemd[1]: Mounting Configuration File System...
+[   17.681232] systemd[1]: Starting Rebuild Hardware Database...
+[   17.717328] systemd[1]: Starting Load/Save Random Seed...
+[   17.747868] systemd[1]: Mounted Configuration File System.
+[   20.045549] systemd-journald[804]: Received request to flush runtime journal from PID 1
+[  143.762352] socfpga-dwmac ff702000.ethernet eth0: device MAC address 06:82:b2:ad:56:7f
+[  143.856313] Micrel KSZ9021 Gigabit PHY stmmac-0:01: attached PHY driver [Micrel KSZ9021 Gigabit PHY] (mii_bus:phy_addr=stmmac-0:01, irq=POLL)
+[  143.858480] socfpga-dwmac ff702000.ethernet eth0: No Safety Features support found
+[  143.858494] socfpga-dwmac ff702000.ethernet eth0: IEEE 1588-2008 Advanced Timestamp supported
+[  143.858740] socfpga-dwmac ff702000.ethernet eth0: registered PTP clock
+[  143.859029] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[  148.006196] socfpga-dwmac ff702000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+[  148.006229] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[  212.480027] vga_ball: loading out-of-tree module taints kernel.
+[  212.480589] vga_ball: init
+[  237.380171] vga_ball: exit
+[  307.859357] vga_ball: init
+[  307.859445] step a
+[  307.861433] steb b
+[  307.861441] step c
+[  307.861484] step d
+[  307.861698] 0
+[  307.861714] Error: Driver 'vga_ball' is already registered, aborting...
+[  307.873799] Unable to handle kernel paging request at virtual address bf00a024
+[  307.881109] pgd = ef14ef85
+[  307.883819] [bf00a024] *pgd=2e7c5811, *pte=00000000, *ppte=00000000
+[  307.890134] Internal error: Oops: 7 [#1] SMP ARM
+[  307.894732] Modules linked in: [last unloaded: vga_ball]
+[  307.900030] CPU: 0 PID: 2336 Comm: systemd-udevd Tainted: G           O      4.19.0 #5
+[  307.907909] Hardware name: Altera SOCFPGA
+[  307.911916] PC is at misc_devnode+0x20/0x48
+[  307.916087] LR is at device_get_devnode+0x80/0xec
+[  307.920770] pc : [<c052efc0>]    lr : [<c05351f0>]    psr: a0010013
+[  307.927008] sp : ee611d30  ip : ee611d40  fp : ee611d3c
+[  307.932208] r10: 00000000  r9 : ee7e9b00  r8 : ee611d78
+[  307.937409] r7 : ee611d6e  r6 : ee693400  r5 : ee611d70  r4 : ee693408
+[  307.943906] r3 : bf00a000  r2 : ee611d74  r1 : ee611d6e  r0 : ee693400
+[  307.950405] Flags: NzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
+[  307.957507] Control: 10c5387d  Table: 2e58404a  DAC: 00000051
+[  307.963228] Process systemd-udevd (pid: 2336, stack limit = 0xaf5a15d4)
+[  307.969812] Stack: (0xee611d30 to 0xee612000)
+[  307.974153] 1d20:                                     ee611d5c ee611d40 c05351f0 c052efac
+[  307.982296] 1d40: ee693408 eeb6f000 c0d03c48 ee693400 ee611da4 ee611d60 c05353d0 c053517c
+[  307.990438] 1d60: ee611d70 ee611d70 00000894 0000512c 00000000 00000000 00000000 2a6bd482
+[  307.998582] 1d80: ee693408 ef0d01c0 ee693408 c093c628 eeb73000 eeb6f000 ee611dcc ee611da8
+[  308.006724] 1da0: c05322a4 c0535268 ee864108 c0d539b4 c093c628 eeb73000 ee693408 ee7e9b00
+[  308.014868] 1dc0: ee611de4 ee611dd0 c0532c6c c05321ec ee864108 00001000 ee611e0c ee611de8
+[  308.023011] 1de0: c02ea0e4 c0532c4c ee864108 00000001 ee611f58 ee7dd900 ee611f58 ee611f58
+[  308.031153] 1e00: ee611e1c ee611e10 c02e887c c02ea058 ee611e64 ee611e20 c0297634 c02e8854
+[  308.039296] 1e20: 00000000 ee864138 0047f438 007000c0 00001000 ee864120 00000055 ee7e9b00
+[  308.047439] 1e40: 00001000 c02e9598 ee611f58 ee611f58 ee611f58 00001000 ee611ea4 ee611e68
+[  308.055581] 1e60: c02e96cc c029742c 00000000 2a6bd482 ee611e9c 0047f438 ef2ded40 c0d03c48
+[  308.063724] 1e80: ee7dd900 c02e9598 ee611f58 00001000 ee611f58 00001000 ee611f24 ee611ea8
+[  308.071867] 1ea0: c026ed3c c02e95a4 00001000 00000000 00000000 00000000 00000000 00000800
+[  308.080009] 1ec0: 00000008 00000055 5e8798a6 c0d03c48 00000817 c0d092ac 0047d470 ee611fb0
+[  308.088151] 1ee0: 0047c460 00001b60 ee611fac ee611ef8 c0118150 2a6bd482 c0274b2c 00001000
+[  308.096293] 1f00: ee7dd900 0047f438 ee611f58 00000000 0047f438 00001000 ee611f54 ee611f28
+[  308.104435] 1f20: c026eef4 c026ed00 0000000e c02902c0 c0d03c48 ee7dd900 00000000 00000000
+[  308.112578] 1f40: ee7dd900 0047f438 ee611f94 ee611f58 c026f448 c026ee68 00000000 00000000
+[  308.120721] 1f60: 5e8798a6 2a6bd482 23b24d50 0046f390 00000000 00001000 00000003 c0101204
+[  308.128863] 1f80: ee610000 00000003 ee611fa4 ee611f98 c026f4c0 c026f3f8 00000000 ee611fa8
+[  308.137005] 1fa0: c0101000 c026f4b4 0046f390 00000000 00000007 0047f438 00001000 00000000
+[  308.145148] 1fc0: 0046f390 00000000 00001000 00000003 0047f438 b6f732a0 beaa1f88 beaa1f80
+[  308.153290] 1fe0: 00000000 beaa1e34 b6dc08c1 b6dfc056 00010030 00000007 00000000 00000000
+[  308.161444] [<c052efc0>] (misc_devnode) from [<c05351f0>] (device_get_devnode+0x80/0xec)
+[  308.169504] [<c05351f0>] (device_get_devnode) from [<c05353d0>] (dev_uevent+0x174/0x200)
+[  308.177562] [<c05353d0>] (dev_uevent) from [<c05322a4>] (uevent_show+0xc4/0x130)
+[  308.184927] [<c05322a4>] (uevent_show) from [<c0532c6c>] (dev_attr_show+0x2c/0x5c)
+[  308.192473] [<c0532c6c>] (dev_attr_show) from [<c02ea0e4>] (sysfs_kf_seq_show+0x98/0x104)
+[  308.200620] [<c02ea0e4>] (sysfs_kf_seq_show) from [<c02e887c>] (kernfs_seq_show+0x34/0x38)
+[  308.208854] [<c02e887c>] (kernfs_seq_show) from [<c0297634>] (seq_read+0x214/0x4ec)
+[  308.216481] [<c0297634>] (seq_read) from [<c02e96cc>] (kernfs_fop_read+0x134/0x1cc)
+[  308.224110] [<c02e96cc>] (kernfs_fop_read) from [<c026ed3c>] (__vfs_read+0x48/0x168)
+[  308.231822] [<c026ed3c>] (__vfs_read) from [<c026eef4>] (vfs_read+0x98/0x124)
+[  308.238929] [<c026eef4>] (vfs_read) from [<c026f448>] (ksys_read+0x5c/0xbc)
+[  308.245863] [<c026f448>] (ksys_read) from [<c026f4c0>] (sys_read+0x18/0x1c)
+[  308.252798] [<c026f4c0>] (sys_read) from [<c0101000>] (ret_fast_syscall+0x0/0x54)
+[  308.260245] Exception stack(0xee611fa8 to 0xee611ff0)
+[  308.265276] 1fa0:                   0046f390 00000000 00000007 0047f438 00001000 00000000
+[  308.273419] 1fc0: 0046f390 00000000 00001000 00000003 0047f438 b6f732a0 beaa1f88 beaa1f80
+[  308.281559] 1fe0: 00000000 beaa1e34 b6dc08c1 b6dfc056
+[  308.286593] Code: e8bd4000 e3510000 e5903054 0a000002 (e1d322b4) 
+[  308.292780] ---[ end trace 8c7b2e7840f56979 ]---
+[  308.311478] Unable to handle kernel paging request at virtual address bf00a024
+[  308.323685] pgd = 8697186d
+[  308.326533] [bf00a024] *pgd=2e7c5811, *pte=00000000, *ppte=00000000
+[  308.332824] Internal error: Oops: 7 [#2] SMP ARM
+[  308.337422] Modules linked in: [last unloaded: vga_ball]
+[  308.342720] CPU: 0 PID: 824 Comm: systemd-udevd Tainted: G      D    O      4.19.0 #5
+[  308.350513] Hardware name: Altera SOCFPGA
+[  308.354520] PC is at misc_devnode+0x20/0x48
+[  308.358690] LR is at device_get_devnode+0x80/0xec
+[  308.363372] pc : [<c052efc0>]    lr : [<c05351f0>]    psr: a0010013
+[  308.369609] sp : eebc9d30  ip : eebc9d40  fp : eebc9d3c
+[  308.374810] r10: 00000000  r9 : ee7e9d00  r8 : eebc9d78
+[  308.380011] r7 : eebc9d6e  r6 : ee693400  r5 : eebc9d70  r4 : ee693408
+[  308.386509] r3 : bf00a000  r2 : eebc9d74  r1 : eebc9d6e  r0 : ee693400
+[  308.393009] Flags: NzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
+[  308.400111] Control: 10c5387d  Table: 2e53004a  DAC: 00000051
+[  308.405832] Process systemd-udevd (pid: 824, stack limit = 0x73e2f324)
+[  308.412330] Stack: (0xeebc9d30 to 0xeebca000)
+[  308.416670] 9d20:                                     eebc9d5c eebc9d40 c05351f0 c052efac
+[  308.424813] 9d40: ee693408 eeb73000 c0d03c48 ee693400 eebc9da4 eebc9d60 c05353d0 c053517c
+[  308.432956] 9d60: eebc9d70 eebc9d70 00000894 0000512c 00000000 00000000 00000000 2a6bd482
+[  308.441099] 9d80: ee693408 ef0d01c0 ee693408 c093c628 eeb6e000 eeb73000 eebc9dcc eebc9da8
+[  308.449243] 9da0: c05322a4 c0535268 ee864108 c0d539b4 c093c628 eeb6e000 ee693408 ee7e9d00
+[  308.457385] 9dc0: eebc9de4 eebc9dd0 c0532c6c c05321ec ee864108 00001000 eebc9e0c eebc9de8
+[  308.465528] 9de0: c02ea0e4 c0532c4c ee864108 00000001 eebc9f58 ee7dc840 eebc9f58 eebc9f58
+[  308.473670] 9e00: eebc9e1c eebc9e10 c02e887c c02ea058 eebc9e64 eebc9e20 c0297634 c02e8854
+[  308.481813] 9e20: 00000008 ee864138 0047c858 007000c0 00001000 ee864120 00000055 ee7e9d00
+[  308.489956] 9e40: 00001000 c02e9598 eebc9f58 eebc9f58 eebc9f58 00001000 eebc9ea4 eebc9e68
+[  308.498099] 9e60: c02e96cc c029742c 00000051 c0274570 0000000e 0047c858 00000000 c0d03c48
+[  308.506241] 9e80: ee7dc840 c02e9598 eebc9f58 00001000 eebc9f58 00001000 eebc9f24 eebc9ea8
+[  308.514383] 9ea0: c026ed3c c02e95a4 00001000 00000000 00000000 00000000 5e8798a6 23b24d50
+[  308.522527] 9ec0: 5e8798a6 23b24d50 5e8798a6 23b24d50 00002ee8 00000000 c0d03c48 2a6bd482
+[  308.530669] 9ee0: 00001000 c0d03c48 beaa23a8 00001000 eebc9fa4 2a6bd482 c0274b2c 00001000
+[  308.538813] 9f00: ee7dc840 0047c858 eebc9f58 00000000 0047c858 00001000 eebc9f54 eebc9f28
+[  308.546955] 9f20: c026eef4 c026ed00 0000000e c02902c0 c0d03c48 ee7dc840 00000000 00000000
+[  308.555097] 9f40: ee7dc840 0047c858 eebc9f94 eebc9f58 c026f448 c026ee68 00000000 00000000
+[  308.563239] 9f60: 5e8798a6 2a6bd482 23b24d50 0047f610 00000000 00001000 00000003 c0101204
+[  308.571382] 9f80: eebc8000 00000003 eebc9fa4 eebc9f98 c026f4c0 c026f3f8 00000000 eebc9fa8
+[  308.579525] 9fa0: c0101000 c026f4b4 0047f610 00000000 0000000e 0047c858 00001000 00000000
+[  308.587667] 9fc0: 0047f610 00000000 00001000 00000003 0047c858 b6f732a0 beaa2580 beaa2578
+[  308.595810] 9fe0: 00000000 beaa242c b6dc08c1 b6dfc056 00010030 0000000e 00000000 00000000
+[  308.603961] [<c052efc0>] (misc_devnode) from [<c05351f0>] (device_get_devnode+0x80/0xec)
+[  308.612020] [<c05351f0>] (device_get_devnode) from [<c05353d0>] (dev_uevent+0x174/0x200)
+[  308.620078] [<c05353d0>] (dev_uevent) from [<c05322a4>] (uevent_show+0xc4/0x130)
+[  308.627445] [<c05322a4>] (uevent_show) from [<c0532c6c>] (dev_attr_show+0x2c/0x5c)
+[  308.634991] [<c0532c6c>] (dev_attr_show) from [<c02ea0e4>] (sysfs_kf_seq_show+0x98/0x104)
+[  308.643137] [<c02ea0e4>] (sysfs_kf_seq_show) from [<c02e887c>] (kernfs_seq_show+0x34/0x38)
+[  308.651371] [<c02e887c>] (kernfs_seq_show) from [<c0297634>] (seq_read+0x214/0x4ec)
+[  308.658997] [<c0297634>] (seq_read) from [<c02e96cc>] (kernfs_fop_read+0x134/0x1cc)
+[  308.666626] [<c02e96cc>] (kernfs_fop_read) from [<c026ed3c>] (__vfs_read+0x48/0x168)
+[  308.674339] [<c026ed3c>] (__vfs_read) from [<c026eef4>] (vfs_read+0x98/0x124)
+[  308.681446] [<c026eef4>] (vfs_read) from [<c026f448>] (ksys_read+0x5c/0xbc)
+[  308.688380] [<c026f448>] (ksys_read) from [<c026f4c0>] (sys_read+0x18/0x1c)
+[  308.695316] [<c026f4c0>] (sys_read) from [<c0101000>] (ret_fast_syscall+0x0/0x54)
+[  308.702763] Exception stack(0xeebc9fa8 to 0xeebc9ff0)
+[  308.707795] 9fa0:                   0047f610 00000000 0000000e 0047c858 00001000 00000000
+[  308.715938] 9fc0: 0047f610 00000000 00001000 00000003 0047c858 b6f732a0 beaa2580 beaa2578
+[  308.724078] 9fe0: 00000000 beaa242c b6dc08c1 b6dfc056
+[  308.729112] Code: e8bd4000 e3510000 e5903054 0a000002 (e1d322b4) 
+[  308.735242] ---[ end trace 8c7b2e7840f5697a ]---
+[  367.218762] vga_ball: init
+[  367.221514] Error: Driver 'vga_ball' is already registered, aborting...
+[  367.228179] -16
+[  367.229959] Error: Driver 'vga_ball' is already registered, aborting...

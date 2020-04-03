@@ -131,7 +131,7 @@ int main()
       if (n_s == 0) n_s = 1;
       else n_s = 0;
     }
-    if (col == 0 || col == 900) {
+    if (col == 0 || col == 9000) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
       }

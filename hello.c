@@ -20,8 +20,8 @@ int vga_ball_fd;
 
 // Set the next coordinate position
 // 0 is left, 1 is right
-unsigned char set_next_col(uint16_t col, int dir) {
-  char col_next;
+uint16_t set_next_col(uint16_t col, int dir) {
+  uint16_t col_next;
   if (dir == 0) col_next = col + 1;
   else col_next = col - 1;
 
@@ -30,8 +30,8 @@ unsigned char set_next_col(uint16_t col, int dir) {
 
 // set next coordinate position
 // 0 is down, 1 is right
-unsigned char set_next_row(uint16_t row, int dir) {
-  char row_next;
+uint16_t set_next_row(uint16_t row, int dir) {
+  uint16_t row_next;
   if (dir == 0)row_next = row - 1;
   else row_next = row + 1;
 
@@ -69,29 +69,24 @@ int main()
   vga_ball_arg_t vla;
   int i, n_s, e_w;
   uint16_t row, col;
-  //unsigned char row1, row2, col1, col2;
   static const char filename[] = "/dev/vga_ball";
 
-  vga_ball_color_t colors;/*[] = {
-    { 0x00, 0x00, 0x00, 0x00, 0x00}
-    };*/
+  vga_ball_color_t colors;
   
   char next_color[9][3] = {
-    { 0xff, 0x00, 0x00 },//, 0x2f, 0x0f }, /* Red */
-    { 0x00, 0xff, 0x00 },//, 0x3f, 0x1f }, /* Green */
-    { 0x00, 0x00, 0xff },//, 0x4f, 0x2f }, /* Blue */
-    { 0xff, 0xff, 0x00 },//, 0x5f, 0x3f }, /* Yellow */
-    { 0x00, 0xff, 0xff },//, 0x6f, 0x4f }, /* Cyan */
-    { 0xff, 0x00, 0xff },//, 0x7f, 0x5f }, /* Magenta */
-    { 0x80, 0x80, 0x80 },//, 0x8f, 0x6f }, /* Gray */
-    { 0x00, 0x00, 0x00 },//, 0x9f, 0x7f }, /* Black */
-    { 0xff, 0xff, 0xff }//, 0xaf, 0x8f }  /* White */
+    { 0xff, 0x00, 0x00 },/* Red */
+    { 0x00, 0xff, 0x00 },/* Green */
+    { 0x00, 0x00, 0xff },/* Blue */
+    { 0xff, 0xff, 0x00 },/* Yellow */
+    { 0x00, 0xff, 0xff },/* Cyan */
+    { 0xff, 0x00, 0xff },/* Magenta */
+    { 0x80, 0x80, 0x80 },/* Gray */
+    { 0xff, 0x00, 0x00 },/* red2 */
+    { 0x00, 0x00, 0x00 } /* Black */
   };
+
+  #define COLORS 9
   
-# define COLORS 9
-
-  printf("VGA ball Userspace program started\n");
-
   if ( (vga_ball_fd = open(filename, O_RDWR)) == -1) {
     fprintf(stderr, "could not open %s\n", filename);
     return -1;
@@ -100,69 +95,40 @@ int main()
   printf("initial state: ");
   print_background_color();
 
-  row = 480;
-  col = 640;
-  //col1 = 0x00;
-  //row1 = 0x00;
-  
-  e_w = 1;
-  n_s = 0;
-  for (i = 0 ; i < 2000 ; i++) {
-    //row = set_next_row(row, n_s);
-    //col = set_next_col(col, e_w);
-    //colors[i % COLORS][3] = col;
-    //colors[i % COLORS][4] = row;
-    /*&colors[0] = { next_color[i % COLORS][0],
-		   next_color[i % COLORS][1],
-		   next_color[i % COLORS][2],
-		   col,
-		   row };*/
-    colors.red = 0x00;//next_color[i % COLORS][0];
-    colors.green = 0x00;//next_color[i % COLORS][1];
-    colors.blue = 0x00;//next_color[i % COLORS][2];
+  row = 240;
+  col = 320;
+
+  e_w = 0;
+  n_s = 1;
+  colors.red = 0x00;
+  colors.green = 0x00;
+  colors.blue = 0x00;
+  while (1) {
+    row = set_next_row(row, n_s);
+    col = set_next_col(col, e_w);
     colors.col1 = (col >> 8) & 0xff;
     colors.col2 = col & 0xff;
     colors.row1 = (row >> 8) & 0xff;
     colors.row2 = row & 0xff;
     set_background_color(&colors);
     print_background_color();
-    printf("Cycle %d \n", i);
-    /*if (row == 0 || row == 10000) {
+    printf("row: %d \ncol: %d\n", row, col);
+    if (row == 25 || row == 455) {
       if (n_s == 0) n_s = 1;
       else n_s = 0;
+      colors.red = next_color[i % COLORS][0];
+      colors.green = next_color[i % COLORS][1];
+      colors.blue = next_color[i % COLORS][2];
     }
-    if (col == 0 || col == 9000) {
+    if (col == 25 || col == 1255) {
       if (e_w == 0) e_w = 1;
       else e_w = 0;
-      }*/
-    usleep(1000000);
-    row = 0;
-    col = 0;
-    colors.col1 = (col >> 8) & 0xff;
-    colors.col2 = col & 0xff;
-    colors.row1 = (row >> 8) & 0xff;
-    colors.row2 = row & 0xff;
-    set_background_color(&colors);
-    print_background_color();
-    usleep(1000000);
-    row = 460;
-    col = 620;
-    colors.col1 = (col >> 8) & 0xff;
-    colors.col2 = col & 0xff;
-    colors.row1 = (row >> 8) & 0xff;
-    colors.row2 = row & 0xff;
-    set_background_color(&colors);
-    print_background_color();
-    usleep(100000);
-    row = 20;
-    col = 20;
-    colors.col1 = (col >> 8) & 0xff;
-    colors.col2 = col & 0xff;
-    colors.row1 = (row >> 8) & 0xff;
-    colors.row2 = row & 0xff;
-    set_background_color(&colors);
-    print_background_color();
-    return 0;
+      colors.red = next_color[i % COLORS][0];
+      colors.green = next_color[i % COLORS][1];
+      colors.blue = next_color[i % COLORS][2];
+    }
+    usleep(5000);
+    i++;
   }
   
   printf("VGA BALL Userspace program terminating\n");
